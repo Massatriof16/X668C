@@ -34,35 +34,10 @@ service gatekeeper-1-0 /system/bin/android.hardware.gatekeeper@1.0-service.trust
     
     
 
-    
-    
-on property:vendor.sys.listener.registered=true
-    start keymint-1-0
-    start gatekeeper-1-0
-
-
-on property:crypto.ready=1 && property:ro.crypto.state=encrypted
-  #  install_keyring
-
-on property:crypto.ready=1 && property:hwservicemanager.ready=true
-    start keymint-1-0
-    start gatekeeper-1-0
-
-on property:ro.crypto.state=unsupported
-    stop keymint-1-0
-    stop gatekeeper-1-0
-
-on property:ro.crypto.state=unencrypted
-    stop keymint-1-0
-    stop gatekeeper-1-0
-
-on property:twrp.decrypt.done=true
-    stop keymint-1-0
-    stop gatekeeper-1-0
+  
 
 on boot
-start keymint-1-0
-start gatekeeper-1-0
-    start boot-hal-1-0
+#start keymint-1-0
+#start gatekeeper-1-0
     start health-hal-2-1
-        
+       
