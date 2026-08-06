@@ -2,8 +2,7 @@
 import /init.recovery.common.rc
 
 on fs
- 
-    start prepdecrypt 
+  #  start prepdecrypt 
 
 #Fix Decryption
 service prepdecrypt /system/bin/prepdecrypt.sh
@@ -37,7 +36,7 @@ service gatekeeper-1-0 /system/bin/android.hardware.gatekeeper@1.0-service.trust
   
 
 on boot
-#start keymint-1-0
-#start gatekeeper-1-0
+start keymint-1-0
+start gatekeeper-1-0
     start health-hal-2-1
        
