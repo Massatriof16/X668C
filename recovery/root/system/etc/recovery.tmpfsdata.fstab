@@ -27,7 +27,6 @@
 /dev/block/by-name/persist /persist emmc defaults defaults
 /dev/block/by-name/logo /logo emmc defaults defaults
 /dev/block/by-name/fbootlogo /fbootlogo emmc defaults defaults
-/dev/block/by-name/tranfs /tranfs ext4 rw,noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc wait,check,formattable,nofail,first_stage_mount
 /dev/block/by-name/miscdata /miscdata emmc defaults defaults
 /dev/block/by-name/system /system_root erofs ro wait,slotselect
 /dev/block/by-name/system /system_root ext4 ro,barrier=1 wait,slotselect
